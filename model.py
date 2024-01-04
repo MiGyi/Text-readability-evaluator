@@ -4,7 +4,7 @@ import os
     
 #py_vncorenlp.download_model(save_dir='/VnCoreNLP')
 
-here = os.path.dirname(os.path.abspath('main.ipynb'))
+here = os.path.dirname(os.path.abspath('model.py'))
 os.chdir(here)
 
 rdrsegmenter = py_vncorenlp.VnCoreNLP(save_dir=os.path.join(here, 'VnCoreNLP'))
@@ -45,7 +45,7 @@ def predict(text, model):
 import pickle
 
 #load
-with open('model.pkl', 'rb') as f:
+with open(here + '/model.pkl', 'rb') as f:
     svc_model = pickle.load(f)
     
 #predict
